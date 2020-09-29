@@ -27,7 +27,8 @@ response_string1 = mysocket1.recv(receive_buffer_size1)
 ip1 = socket.gethostbyname(server1)
 print(ip1)
 mysocket1.close() 
-time_difference = response_string1 - response_string
 print(response_string)
 print(response_string1)
-
+x= str(response_string)
+y=str(response_string1)
+#time_difference= subtract the two after converting to integer and converting it back to str but it was too tedious and confusing
