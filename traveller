@@ -1,0 +1,33 @@
+import socket
+import sys
+import time
+
+def bytes_to_datetime(bytes):
+    result = 0
+    for b in bytes:
+        result = result * 256 + int(b)
+    return result
+
+server = "time-a-g.nist.gov"
+port = 37
+receive_buffer_size = 32
+mysocket = socket.socket()
+mysocket.connect((server, port))
+response_string = mysocket.recv(receive_buffer_size)
+ip = socket.gethostbyname(server)
+print(ip)
+mysocket.close()
+
+server1 = "time-b-g.nist.gov"
+port1 = 37
+receive_buffer_size1 = 32
+mysocket1 = socket.socket()
+mysocket1.connect((server1, port1))
+response_string1 = mysocket1.recv(receive_buffer_size1)
+ip1 = socket.gethostbyname(server1)
+print(ip1)
+mysocket1.close() 
+time_difference = response_string1 - response_string
+print(response_string)
+print(response_string1)
+print(time_difference)
