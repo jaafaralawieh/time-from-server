@@ -30,4 +30,4 @@ mysocket1.close()
 time_difference = response_string1 - response_string
 print(response_string)
 print(response_string1)
-print(time_difference)
+
